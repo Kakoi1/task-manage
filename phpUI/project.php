@@ -24,7 +24,8 @@
                             <td>project name</td>
                             <td>project description</td>
                             <td>Due date</td>
-                            <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                            <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
                           
                         </tr>
                         <tr>
@@ -32,7 +33,8 @@
                             <td>project name</td>
                             <td>project description</td>
                             <td>Due date</td>
-                            <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                            <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
                           
                         </tr>
                         <tr>
@@ -40,7 +42,8 @@
                             <td>project name</td>
                             <td>project description</td>
                             <td>Due date</td>
-                            <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                            <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
                           
                         </tr>
                     </tbody>
@@ -54,12 +57,12 @@
       <br>
       <h1 class="text-white">Project Form</h1>
       <br>
-      <div class="row">
-      <div class="col">
+      
     <div class="input-group mb-4">
     <span class="input-group-text" id="basic-addon1">Project Name</span>
     <input type="text" class="form-control" placeholder="Task Name" aria-label="Task Name" aria-describedby="basic-addon1">
   </div>
+  
   <div class="input-group mb-4">
     <span class="input-group-text" id="basic-addon1">Project Due date</span>
     <input type="date" class="form-control" placeholder="Task Name" aria-label="Task Name" aria-describedby="basic-addon1">
@@ -70,8 +73,7 @@
     <span class="input-group-text" id="basic-addon1">Project ID</span>
     <input id="taskId" type="text" class="form-control" placeholder="ID" aria-label="Task Name" aria-describedby="basic-addon1" readonly>
   </div>
-  </div>
-  </div>
+  
   <div class="input-group">
     <span class="input-group-text">Project description</span>
     <textarea class="form-control" aria-label="With textarea"></textarea>

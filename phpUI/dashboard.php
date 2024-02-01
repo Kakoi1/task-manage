@@ -88,7 +88,11 @@
         color: black;
         border: solid 2px;
       }
- 
+    
+      .card-body{
+        height: 200px;
+      }
+
   </style>
 <body>
     
@@ -118,7 +122,7 @@
       <li>
       <li>
     <div class="hov-sm-2">
-        <a href="#" class="text-white">Report</a>
+        <a href="#" class="text-white" onclick="showTab(6)">Report</a>
         </div>
       </li>
       <li>
@@ -143,7 +147,7 @@
         <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#" onclick="showTab(4)">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li><a class="dropdown-item" href="login.php">Logout</a></li>
           </ul>
           </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -189,7 +193,7 @@
           <div id="complete" class="ok p-3 bg-success text-white"  onclick="showTab(3)"> <i class="bi bi-clipboard-check" style="font-size: 50px; background-color: transparent;"></i> Completed Task</div>
         </div>
         <div class="col-md-2">
-          <div class="ok p-3 bg-danger text-white" onclick="showTab(3)"> <i class="bi bi-briefcase" style="font-size: 50px; background-color: transparent;"></i>All Task</div>
+          <div class="ok p-3 bg-danger text-white" onclick="showTab(6)"> <i class="bi bi-briefcase" style="font-size: 50px; background-color: transparent;"></i>Report</div>
         </div>
         <div class="col-md-2">
           <div id="team" class="ok p-3 bg-warning text-dark" onclick="showTab(5)"> <i class="bi bi-microsoft-teams" style="font-size: 50px; background-color: transparent;"></i> Teams</div>
@@ -217,6 +221,8 @@
               include 'taskui.php';
                     
       ?>
+
+
                    
                 
       </div>
@@ -236,6 +242,13 @@
               include 'team.php';
                     
       ?>   
+          </div>
+
+          <div class="tab-content tab6-content">
+          <?php 
+              include 'report.php';
+                    
+           ?>   
           </div>
 
  
@@ -275,6 +288,12 @@
   function closeprojTeam(){
     document.getElementById('overlayTeam').style.display = 'none';
   }
+  function openMessage(){
+    document.getElementById('overlayMessage').style.display = 'flex';
+  }
+  function closeMessage(){
+    document.getElementById('overlayMessage').style.display = 'none';
+  }
 
   function showTab(tabNumber) {
    
@@ -307,6 +326,57 @@
       return option.text;
     }).join(", "); // Use join to concatenate the option texts with commas
   });
+  function sendMessage() {
+        var messageInput = document.getElementById('messageInput');
+        var message = messageInput.value.trim();
+
+        if (message !== "") {
+            var chatBox = document.getElementById('chat-box');
+            var newMessage = document.createElement('div');
+            newMessage.className = 'mb-2';
+            newMessage.textContent = message;
+            chatBox.appendChild(newMessage);
+
+            // Clear the input field after sending the message
+            messageInput.value = "";
+        }
+    }
+
+       // Update progress bars based on due dates
+       updateProgressBar('dueDate1', 'progressBar1', 'progressText1');
+    updateProgressBar('dueDate2', 'progressBar2', 'progressText2');
+    updateProgressBar('dueDate3', 'progressBar3', 'progressText3');
+    updateProgressBar('dueDate4', 'progressBar4', 'progressText4');
+    updateProgressBar('dueDate5', 'progressBar5', 'progressText5');
+    // Repeat similar calls for other tasks
+
+    
+    function updateProgressBar(dueDateId, progressBarId, progressTextId) {
+        var dueDateInput = document.getElementById(dueDateId);
+        var progressBar = document.getElementById(progressBarId);
+        var daysLeftText = document.getElementById(progressTextId);
+
+        if (dueDateInput.value !== "") {
+            // Calculate the number of days left until the due date
+            var dueDate = new Date(dueDateInput.value);
+            var currentDate = new Date();
+            var timeDifference = dueDate - currentDate;
+            var daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+            // If the due date has passed, set daysLeft to 0
+            daysLeft = (daysLeft < 0) ? 0 : daysLeft;
+
+            // Calculate the progress based on the number of days left
+            var progress = Math.max(0, Math.min(100, (daysLeft / 30) * 100)); // Assuming a 30-day timeframe, adjust as needed
+
+            // Update the progress bar width and aria-valuenow attribute
+            progressBar.style.width = progress + '%';
+            progressBar.setAttribute('aria-valuenow', progress.toFixed(2));
+
+            // Update the numeric display
+            daysLeftText.textContent = daysLeft + ' days left';
+        }
+    }
 
 </script>
 </body>

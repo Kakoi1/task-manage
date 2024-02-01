@@ -22,7 +22,8 @@
                   <td scope="row">1001</td>
                   <td>Team name</td>
                   <td>Jhon, rey, degamo</td>
-                  <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                  <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                  <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
                 
               </tr>
               <tr>
@@ -30,7 +31,8 @@
               <td scope="row">1002</td>
                   <td>Team name</td>
                   <td>Jhon, rey, degamo</td>
-                  <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                  <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                  <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
                 
               </tr>
               <tr>
@@ -38,7 +40,11 @@
               <td scope="row">1003</td>
                   <td>Team name</td>
                   <td>Jhon, rey, degamo</td>
-                  <td><button type="button" onclick="addTask()" class="btn btn-primary ">Edit</button></td>
+                  
+                  <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
+                  <button type="button" onclick="addTask()" class="btn btn-danger ">delete</button>
+                 
+                  </td>
                 
               </tr>
           </tbody>
@@ -71,7 +77,9 @@
 <option value="3">rey</option>
 </select>
 </div>
+
 </div>
+
 <div class="col-lg-8">
 <input id="selectedInput" type="text" aria-label="Last name" class="form-control">
 </div>
