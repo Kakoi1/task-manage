@@ -343,40 +343,40 @@
     }
 
        // Update progress bars based on due dates
-       updateProgressBar('dueDate1', 'progressBar1', 'progressText1');
-    updateProgressBar('dueDate2', 'progressBar2', 'progressText2');
-    updateProgressBar('dueDate3', 'progressBar3', 'progressText3');
-    updateProgressBar('dueDate4', 'progressBar4', 'progressText4');
-    updateProgressBar('dueDate5', 'progressBar5', 'progressText5');
+    //    updateProgressBar('dueDate1', 'progressText1');
+    // updateProgressBar('dueDate2', 'progressText2');
+    // updateProgressBar('dueDate3', 'progressText3');
+    // updateProgressBar('dueDate4', 'progressText4');
+    // updateProgressBar('dueDate5', 'progressText5');
     // Repeat similar calls for other tasks
 
     
-    function updateProgressBar(dueDateId, progressBarId, progressTextId) {
-        var dueDateInput = document.getElementById(dueDateId);
-        var progressBar = document.getElementById(progressBarId);
-        var daysLeftText = document.getElementById(progressTextId);
+    // function updateProgressBar(dueDateId, progressTextId) {
+        // var dueDateInput = document.getElementById(dueDateId);
+        // var progressBar = document.getElementById(progressBarId);
+        // var daysLeftText = document.getElementById(progressTextId);
 
-        if (dueDateInput.value !== "") {
+        // if (dueDateInput.value !== "") {
             // Calculate the number of days left until the due date
-            var dueDate = new Date(dueDateInput.value);
-            var currentDate = new Date();
-            var timeDifference = dueDate - currentDate;
-            var daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+            // var dueDate = new Date(dueDateInput.value);
+            // var currentDate = new Date();
+            // var timeDifference = dueDate - currentDate;
+            // var daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
             // If the due date has passed, set daysLeft to 0
-            daysLeft = (daysLeft < 0) ? 0 : daysLeft;
+            // daysLeft = (daysLeft < 0) ? 0 : daysLeft;
 
             // Calculate the progress based on the number of days left
-            var progress = Math.max(0, Math.min(100, (daysLeft / 30) * 100)); // Assuming a 30-day timeframe, adjust as needed
+            // var progress = Math.max(0, Math.min(100, (daysLeft / 30) * 100)); 
 
             // Update the progress bar width and aria-valuenow attribute
-            progressBar.style.width = progress + '%';
-            progressBar.setAttribute('aria-valuenow', progress.toFixed(2));
+            // progressBar.style.width = progress + '%';
+            // progressBar.setAttribute('aria-valuenow', progress.toFixed(2));
 
             // Update the numeric display
-            daysLeftText.textContent = daysLeft + ' days left';
-        }
-    }
+            // daysLeftText.textContent = daysLeft + ' days left';
+    //     }
+    // }
 
 </script>
 </body>

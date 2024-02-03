@@ -16,6 +16,7 @@
                            <th scope="col">Task description</th>
                            <th scope="col">Task due date</th>
                            <th scope="col">Task priority</th>
+                           <th scope="col">Project Assigned</th>
                            <th scope="col">Team Assigned</th>
                            <th scope="col">Task Status</th>
                            <th scope="col">Action</th>
@@ -29,6 +30,7 @@
                            <td>task description</td>
                            <td>Due date</td>
                            <td>Priority</td>
+                           <td>Project Name</td>
                            <td>team name</td>
                            <td>Inprogress</td>
                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
@@ -41,6 +43,7 @@
                            <td>task description</td>
                            <td>Due date</td>
                            <td>Priority</td>
+                           <td>Project Name</td>
                            <td>team name</td>
                            <td>Inprogress</td>
                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
@@ -53,6 +56,7 @@
                            <td>task description</td>
                            <td>Due date</td>
                            <td>Priority</td>
+                           <td>Project Name</td>
                            <td>team name</td>
                            <td>Inprogress</td>
                            <td><button type="button" onclick="addTask()" class="btn btn-primary me-3">Edit</button> 
